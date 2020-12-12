@@ -1,7 +1,22 @@
 /// @description Movement and collision
-show_debug_message(alarm[0] / 60);
 // Checks if player is grounded by checking collision of the player's hitbox with any wall below them.
 grounded = place_meeting(x, y + 1, o_wall);
+	
+	
+// TEMPORARY CODE FOR PAUSING AND INVENTORY STUFF. FIX THIS LATER.
+
+if (input.pause) {
+	pausing = !pausing;
+}
+
+if (pausing) {
+	instance_activate_object(o_inventory);
+	instance_activate_object(o_slot);
+}
+else {
+	instance_deactivate_object(o_inventory);
+	instance_deactivate_object(o_slot);
+}
 	
 switch(state) {
 	case "move":
@@ -65,10 +80,10 @@ switch(state) {
 		set_state_sprite(s_player_prototype_roll, 0.6, 0);
 		
 		// Determines movement based on direction.
-		if (image_xscale == 1) {
+		if (image_xscale > 0) {
 			hsp = roll_speed;
 		}
-		if (image_xscale == -1) {
+		if (image_xscale < 0) {
 			hsp = -roll_speed;
 		}
 		

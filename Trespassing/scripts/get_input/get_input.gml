@@ -5,4 +5,6 @@ function get_input(){
 	jump = keyboard_check_pressed(vk_space);
 	crouch = keyboard_check_direct(vk_lcontrol);
 	roll = keyboard_check_pressed(vk_lshift);
+	interact = keyboard_check_pressed(ord("E"));
+	pause = keyboard_check_pressed(vk_escape);
 }
