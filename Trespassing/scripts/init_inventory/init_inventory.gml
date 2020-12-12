@@ -1,5 +1,6 @@
 
 function init_inventory(){
+	equip_id = -1;
 	// Enumerator setup for items
 	enum item {
 		none,
@@ -22,7 +23,7 @@ function init_inventory(){
 	}
 	
 	// Creates a grid that is 4 slots wide, and 2 slots high. Actual inventory which the player uses.
-	global.inventory = ds_grid_create(4, 2);
+	global.inventory = ds_grid_create(8, 2);
 	ds_grid_clear(global.inventory, 0);
 
 	// Creates a grid (similar to a 2D array) with item.total and item_stat.total as the dimensions. 
