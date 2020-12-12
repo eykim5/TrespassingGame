@@ -12,10 +12,10 @@ jump_speed = 28;
 roll_speed = 4;
 roll_cooldown_duration = 2.5; // In seconds.
 alarm[0] = -1; // 60 frames per second.
-pickup_range = 50;
+
+// ID which indicates what item the player is currently equipped with. -1 indicates nothing is equipped.
+equip_id = -1;
+curr_sprite = s_player_prototype;
 
 // Input
 input = instance_create_layer(0, 0, "Instances", o_input);
-
-// TEMPORARY FOR PAUSING. PLACE SOMEWHERE ELSE LATER.
-pausing = false;

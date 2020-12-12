@@ -1,23 +1,7 @@
 /// @description Movement and collision
 // Checks if player is grounded by checking collision of the player's hitbox with any wall below them.
 grounded = place_meeting(x, y + 1, o_wall);
-	
-	
-// TEMPORARY CODE FOR PAUSING AND INVENTORY STUFF. FIX THIS LATER.
 
-if (input.pause) {
-	pausing = !pausing;
-}
-
-if (pausing) {
-	instance_activate_object(o_inventory);
-	instance_activate_object(o_slot);
-}
-else {
-	instance_deactivate_object(o_inventory);
-	instance_deactivate_object(o_slot);
-}
-	
 switch(state) {
 	case "move":
 		#region Move State
