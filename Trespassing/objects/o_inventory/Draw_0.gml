@@ -1,4 +1,4 @@
-/// @description Draw the mouse items.
+/// @description Draws the visible inventory slots, items, etc.
 
 with (o_slot)
  {
