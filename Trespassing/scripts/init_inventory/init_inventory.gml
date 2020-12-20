@@ -1,6 +1,7 @@
 
 function init_inventory(){
 	equip_id = -1;
+	num_rows = 2;	// Indicates how many rows the visual inventory divides the slots by. Please keep this value as a whole number denominator of the total slots.
 	
 	// Enumerator setup for items
 	enum item {
@@ -23,8 +24,8 @@ function init_inventory(){
 		total
 	}
 	
-	// Creates a grid that is 4 slots wide, and 2 slots high. Actual inventory which the player uses.
-	// Arguments that are taken are (total slots) and (amount of rows to divide by) respectively. Please make sure the former is divisible by the latter.
+	// Creates a grid that has 8 slots, and can store 2 pieces of information. Actual inventory which the player uses.
+	
 	global.inventory = ds_grid_create(8, 2);
 	ds_grid_clear(global.inventory, 0);
 
